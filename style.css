@@ -1,0 +1,248 @@
+/*Forma de Zerar a margem e bordas todos os elementos*/ 
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Formatação Geral da Pagina */
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Source+Sans+Pro:wght@300&display=swap');
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+}
+
+body{ 
+    background-color: rgba(97, 6, 161, 0.507);
+}
+
+/* Menu Lateral */
+@-webkit-keyframes aparecer {
+    from { opacity: 0;} 
+    to {opacity: 1;}
+}
+
+li > ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+    box-shadow: 3px 0 10px rgba(48, 1, 82, 0.856);
+    -webkit-animation: aparecer .7s;
+    display: none;
+}
+
+ul{
+    list-style: none;
+    background: rgba(48, 1, 82, 0.856);
+}
+
+.container{
+    background: rgba(48, 1, 82);
+    position: fixed;
+    height: 100%;
+    left: 0;
+    width: 200px;
+    top: 0;
+    box-shadow: 3px 0 10px rgba(48, 1, 82, 0.856);
+    -webkit-transition: left .5s ease;
+    -o-transition: left .5s ease;
+    transition: left .5s ease;
+    z-index: 1000;
+}
+
+#menu_principal a, label{
+    color:rgb(255, 255, 255);
+    display: block;
+    padding-left: 25px;
+    text-decoration: none;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5 ease;
+    transition: all .5s ease;
+}
+
+#menu_principal {
+    padding-top: 50%;
+}
+
+#menu_principal li {
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    width: 100%;
+}
+
+#menu_principal > li {
+    margin: 0 0 5% 0;
+}
+
+.botao{
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    background: rgba(100, 18, 158, 0.808);
+    left: 96%;
+    top: 8px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(48, 1, 82, 0.856);
+    -webkit-transition: left .2s;
+    -o-transition: left .2s;
+    transition: left .2s;
+    z-index: 0;
+}
+
+.botao:hover{
+    left: 100%;
+    cursor: pointer;
+    color: rgba(255, 217, 0, 0.856);
+}
+
+.invisible{
+    left: -200px;
+}
+
+.direita{
+    float: right;
+    line-height: 60px;
+}
+
+.principal {
+    margin-right: 10px;
+
+}
+
+#menu_principal li:hover > a, #menu_principal li:hover> label{
+    color: rgba(255, 217, 0, 0.856);
+    cursor: pointer;
+}
+
+nav ul li:hover > ul{
+    display: inherit;
+}
+
+[id^=drop], ul li .mif-expand-more {
+    display: none;
+}
+
+
+@media only screen and (max-width:560px), handheld and (orientation: landscape){
+    #menu_principal li{
+        margin: auto;
+        height: auto;
+    }
+
+    #menu_principal{
+        padding-top: 20%;
+    }
+
+    li > ul {
+        position: static;
+        height: auto;
+        box-shadow: none;
+        padding-left: 15px;
+        width: auto;
+    }
+
+    nav{
+        overflow-y: auto;
+        max-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    ul li .mif-expand-more{
+        display: inline;
+    }
+
+    ul li .mif-chevron-right{
+        display: none;
+    }
+
+    [id^=drop]:checked + ul {
+        display: block;
+    }
+
+    nav ul li:hover > ul {
+        display: none;
+    }
+}
+
+
+/* Formação das Caixas de Texto */
+
+.container_texto {
+    width: 75%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    left: 230px;
+    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-transition: left .5s ease;
+    -o-transition: left .5s ease;
+    transition: left .5s ease;
+    z-index: 0;
+    
+}
+
+.mninv{
+    /*Se o menu estiver oculto*/
+    left: 150px;
+    justify-content: center;
+}
+
+.paragrafo{
+    width: 70%;
+    position: relative;
+    left: 15%;
+       
+}
+
+h1{
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 10px;
+}
+.paragrafo > p{    
+   
+    font-size: 18px;
+    width: 100%;
+    text-indent: 5%;
+    text-align: justify;
+   
+}
+
+.paragrafo > h3 {
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 25px;
+}
+
+.paragrafo > h5 {
+    
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+    font-size: x-large;
+}
+
+.paragrafo > h6 {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    padding: 20px;
+    text-align: center;
+    font-size: large;
+}
+
+.paragrafo > a{
+    font-size: medium;
+    text-align: center;
+    padding: 15px;
+}
