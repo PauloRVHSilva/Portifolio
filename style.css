@@ -40,7 +40,7 @@ ul{
 }
 
 .container{
-    background: rgba(48, 1, 82);
+    background: rgba(48, 1, 82, 1);
     position: fixed;
     height: 100%;
     left: 0;
